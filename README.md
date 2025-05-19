@@ -75,7 +75,20 @@ Clique em + Create e preencha para adicionar uma nova conexão:
 - Password:	```example```
 - Port: ```27017``` 
 
+### 6. Configuração da Conexão RabbitMQ no Airflow
+Acesse a interface web do Airflow.
 
+Vá em Admin > Connections.
+
+Clique em + Create e preencha para adicionar uma nova conexão:
+
+- Conn Id: 	```rabbitmq_default```
+- Conn Type: ```generic``` 
+- Host: ```localhost``` Este é o nome do serviço RabbitMQ definido no arquivo ```docker-compose.yml```
+- Username:	```user```
+- Password:	```password```
+- Port: ```5672``` 
+- Schema: ```ampq```
 
 **Instalação do Provider MongoDB (se necessário):**
   - Abra um novo terminal ou prompt de comando.
@@ -102,7 +115,7 @@ Clique em + Create e preencha para adicionar uma nova conexão:
         
   - No campo "Extra Fields (JSON)", adicione a seguinte configuração:JSON
     
-     ```{ "srv": null, "authSource": "admin", "ssl": false, "allow_insecure": null }```
+     ```{ "srv": null, "authSource": "admin", "ssl": false}```
     
   - Clique no botão "Save" para salvar a conexão MongoDB.
 
@@ -112,7 +125,7 @@ Clique em + Create e preencha para adicionar uma nova conexão:
 - Na tela inicial, clique em "Connect".
 - Na janela de conexão, insira a seguinte URL de conexão:
     
-    `mongodb://root:example@localhost:27017/admin`
+    `mongodb://root:example@mongo:27017/admin`
     
 - Clique no botão "Connect".
 - O Mongo Compass deverá se conectar à instância MongoDB em execução no Docker.
