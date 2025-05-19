@@ -246,9 +246,9 @@ Processo segue o objetivo original com:
 
 ### 🔁 Ciclo de Execução da DAG
 
-1. Trigger mensal do Airflow
-2. Leitura dos novos dados
-3. Comparação com CNPJs conhecidos
-4. Geração de `payloads` JSON
-5. Publicação nas filas por setor
+1. Realiza o download dos arquivos mais recentes
+2. Transforma os dados em csv
+3. Realiza tratamento inicial dos dados e insere os registros no banco de dados de camada bronze
+4. Publica os dados processados em uma fila de mensagens RabbitMQ
+5. Executa a limpeza e descarte de dados temporários ou obsoletos das collections armazenadas na camada bronze
 
