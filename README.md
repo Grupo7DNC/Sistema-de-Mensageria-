@@ -14,7 +14,7 @@ Apache Airflow com integração ao MongoDB
 
 ## ✅ Pré-requisitos
 Docker instalado no sistema operacional
-👉 Documentação Oficial do Docker
+👉 https://docs.docker.com/
 
 Acesso à linha de comando (terminal, shell ou prompt de comando)
 
